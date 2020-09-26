@@ -1,0 +1,100 @@
+.event-div {
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	flex-direction: column;
+	width: 375px;
+	background-color: white;
+	margin-top: 20px;
+	margin-right: 10px;
+	border-radius: 20px;
+	padding-bottom: 20px;
+	/* padding: 0 30px; */
+	transition: all 1s;
+	-webkit-box-shadow: 10px 10px 20px 0px rgba(240, 240, 240, 1);
+	-moz-box-shadow: 10px 10px 20px 0px rgba(240, 240, 240, 1);
+	box-shadow: 10px 10px 20px 0px rgba(240, 240, 240, 1);
+	/* position: fixed; */
+
+	/* position: sticky; */
+}
+
+@media screen and (max-width: 420px) {
+	.event-div {
+		width: 350px;
+	}
+}
+
+/* .eventType {
+	font-size: 10px;
+} */
+
+.event-div .info-content {
+	height: auto;
+	font-weight: 600;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	max-width: 300px;
+	padding: 0 30px;
+}
+
+.info-content {
+	margin: 0;
+	margin-bottom: 35px;
+	line-height: 20px;
+}
+
+.info-id {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 600;
+	color: lightslategray;
+	padding: 0 30px;
+}
+
+.eventTypeLogo {
+	width: 100%;
+	/* background: blue; */
+	height: 200px;
+	margin-bottom: 30px;
+	border-radius: 20px 20px 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 1s;
+	background: lightgrey;
+}
+.other {
+	background-color: #154764;
+}
+
+.workshop {
+	background-color: #414a4c;
+}
+
+.minievent {
+	background-color: hsl(212, 86%, 32%);
+}
+
+.speaker {
+	background-color: #4d21bd;
+
+	/* color: lightgrey; */
+}
+
+.meal {
+	background-color: #148014;
+}
+.event-div .eventType {
+	width: 175px;
+	height: auto;
+	margin: 20px 0;
+	padding: 0 30px;
+	color: black;
+	/* background: lightgrey; */
+	transform: translateX(-5px);
+}
+
+.description {
+	line-height: 140%;
+}

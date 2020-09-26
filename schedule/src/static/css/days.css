@@ -1,0 +1,92 @@
+:root {
+	--middle-line-height: 25px;
+	--li-padding-bottom: calc(var(--middle-line-height) * 2);
+	--middle-line-bottom: calc(var(--middle-line-height) / 2);
+}
+
+.daysUl {
+	list-style: none;
+	text-align: center;
+	width: 200px;
+	position: relative;
+	/* margin-top: 80px; */
+	transition: all 1s;
+
+	/* background: red; */
+	/* margin: 0; */
+	/* padding: 0; */
+	/* width: 100%; */
+}
+
+@media screen and (max-width: 420px) {
+	.daysUl {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		position: absolute;
+		background: white;
+		top: 0;
+		left: 0;
+		margin: 0;
+		/* align-items: center; */
+		/* margin-left: 20px; */
+		flex-direction: column;
+		padding: 0;
+		padding-top: 65px;
+		/* height: calc(100vh - 60px); */
+	}
+
+	.backdrop {
+		width: 100vw;
+		/* height: 800vh; */
+		height: 100vh;
+		position: absolute;
+		background: black;
+		/* z-index: -1; */
+		opacity: 0;
+		top: 0;
+		left: 0;
+		transition: all 1s;
+		/* opacity: 0.5; */
+	}
+
+	.showBackdrop {
+		opacity: 0.5;
+	}
+
+	.display {
+		left: -200px;
+	}
+}
+
+li {
+	position: relative;
+	width: 100%;
+	/* background: blue;  */
+	height: 30px;
+	padding-bottom: var(--li-padding-bottom);
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+li p {
+	padding: 10px 20px;
+	border-radius: 4px;
+}
+
+li p:hover {
+	background: lightblue;
+}
+
+.date::after {
+	content: "";
+	height: var(--middle-line-height);
+	width: 2px;
+	position: absolute;
+	background-color: grey;
+	bottom: var(--middle-line-bottom);
+	left: 50%;
+	right: 50%;
+}

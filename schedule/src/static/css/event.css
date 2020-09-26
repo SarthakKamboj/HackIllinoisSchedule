@@ -1,0 +1,90 @@
+:root {
+	--iconSize: 50px;
+}
+
+.card,
+.info {
+	/* background-color: rgb(97, 191, 218); */
+	/* width: 450px; */
+	width: 80%;
+	font-weight: bold;
+	/* width: 70%; */
+	height: 120px;
+	margin: 5px 0;
+	padding: 0px 10px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	box-sizing: border-box;
+	color: lightgrey;
+}
+
+@media screen and (max-width: 420px) {
+	.card {
+		font-size: 13px;
+		width: 90%;
+	}
+	.info {
+		width: 90%;
+	}
+}
+
+.other {
+	background-color: #154764;
+}
+
+.workshop {
+	background-color: #414a4c;
+}
+
+.minievent {
+	background-color: hsl(212, 86%, 32%);
+}
+
+.speaker {
+	background-color: #4d21bd;
+
+	/* color: lightgrey; */
+}
+
+.meal {
+	background-color: #148014;
+}
+
+.invisible {
+	display: none;
+}
+
+.info .eventType {
+	height: var(--iconSize);
+	width: var(--iconSize);
+	margin-right: var(--iconSize);
+}
+
+.details {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+	position: relative;
+	flex-direction: vertical;
+	line-height: 20px;
+}
+
+.details p {
+	margin: 5px 0;
+	padding: 0;
+	width: 120%;
+}
+
+.viewMore {
+	height: var(calc(--iconSize * 1.5));
+	width: var(--iconSize);
+	/* float: right; */
+	margin-right: 0;
+	cursor: pointer;
+	padding: 20px 0;
+}

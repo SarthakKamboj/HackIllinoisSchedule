@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+.container {
+	display: grid;
+	grid-template-columns: 0.5fr 1fr 0.5fr;
+	grid-template-areas: "days content info-section";
+	font-family: 'Kumbh Sans', sans-serif;
+	scroll-behavior: smooth;
+
+	background: #f7f9fa;
+}
+
+.nav {
+	display: flex;
+	width: 100%;
+	height: 125px;
+	display: flex;
+
+	background: #f7f9fa;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	height: 100px;
+	width: 100px;
+}
+
+.menuIcon {
+	display: none;
+}
+
+@media screen and (max-width: 420px) {
+	.menuIcon {
+		width: 40px;
+		margin: 20px 0;
+		z-index: 4;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		margin-left: 20px;
+		align-self: flex-start;
+	}
+	.container {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.info-section {
+		margin-bottom: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.days {
+		position: absolute;
+		left: 0;
+		top: 0;
+		position: -webkit-sticky;
+		z-index: 2;
+		background: white;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+
+.days {
+	grid-area: days;
+}
+
+.content {
+	grid-area: content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* justify-content: center; */
+}
+
+.content .loadingImg {
+	width: 300px;
+	/* justify-self: flex-start; */
+}
+
+.info-section {
+	grid-area: info-section;
+	box-sizing: border-box;
+	position: relative;
+	/* position: sticky; */
+	/* background: orange; */
+}

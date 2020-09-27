@@ -4,11 +4,8 @@
 
 .card,
 .info {
-	/* background-color: rgb(97, 191, 218); */
-	/* width: 450px; */
 	width: 80%;
 	font-weight: bold;
-	/* width: 70%; */
 	height: 120px;
 	margin: 5px 0;
 	padding: 0px 10px;
@@ -45,8 +42,6 @@
 
 .speaker {
 	background-color: #4d21bd;
-
-	/* color: lightgrey; */
 }
 
 .meal {
@@ -83,7 +78,6 @@
 .viewMore {
 	height: var(calc(--iconSize * 1.5));
 	width: var(--iconSize);
-	/* float: right; */
 	margin-right: 0;
 	cursor: pointer;
 	padding: 20px 0;

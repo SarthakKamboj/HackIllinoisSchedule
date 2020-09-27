@@ -5,29 +5,16 @@ import '../static/css/info-section.css';
 
 const InfoSection = React.memo(({ faMapping, capitalize, capitalizeAllWords, eventToShow: event }) => {
 	const [ date, setDate ] = useState(null);
-	const [ month, getMonth ] = useState(null);
-	const [ day, getDay ] = useState(null);
-	const [ year, getYear ] = useState(null);
 	const [ eventType, setEventType ] = useState('');
 	const [ eventTypeForMapping, setEventTypeForMapping ] = useState('');
 	const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ];
-	const days = [ 'Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat' ];
 	const [ eventName, setEventName ] = useState('');
-
-	// const faMapping = {
-	// 	meal: 'hamburger',
-	// 	minievent: 'users',
-	// 	other: 'ellipsis-h',
-	// 	speaker: 'chalkboard-teacher',
-	// 	workshop: 'laptop-code'
-	// };
 
 	useEffect(
 		() => {
 			if (event) {
 				const date = new Date(event.startTime * 1000);
 				const month = date.getMonth();
-				const day = date.getDay();
 				const year = date.getFullYear();
 				const dateNum = date.getDate();
 				setDate(`${months[month]} ${dateNum}, ${year}`);

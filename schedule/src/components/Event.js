@@ -1,20 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../static/css/event.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Event = React.memo(({ faMapping, capitalizeAllWords, event, eventOnCurrentDate, updateEventToShow }) => {
-	// const [ startTime, setStartTime ] = useState();
-	// const [ endTime, setEndTime ] = useState();
-	// const times = [];
-	const [ displayEvent, setDisplayEvent ] = useState(true);
-
 	const [ startTime, setStartTime ] = useState('');
 	const [ endTime, setEndTime ] = useState('');
 
-	const [ startHour, setStartHour ] = useState(0);
-	const [ endHour, setEndHour ] = useState(0);
-	const [ startMin, setStartMin ] = useState(0);
-	const [ endMin, setEndMin ] = useState(0);
 	const [ date, setDate ] = useState(0);
 
 	const [ eventType, setEventType ] = useState('');
@@ -24,23 +15,12 @@ const Event = React.memo(({ faMapping, capitalizeAllWords, event, eventOnCurrent
 		updateEventToShow(event);
 		window.scrollTo(0, 0);
 	};
-	// const capitalize = (str) => {
-	// 	return str[0].toUpperCase() + str.substring(1);
-	// };
-
-	// const capitalizeAllWords = (str) => {
-	// 	const strWords = str.split(' ');
-	// 	const upStrWords = [];
-	// 	let word;
-	// 	for (word in strWords) {
-	// 		const capWord = capitalize(strWords[word]);
-	// 		upStrWords.push(capWord);
-	// 	}
-	// 	return upStrWords.join(' ');
-	// };
 
 	useEffect(() => {
+		// gets event type
 		setEventType(event.eventType.toLowerCase());
+
+		// get date and breaks it into hour and minute
 		const startDate = new Date(event.startTime * 1000);
 		const endDate = new Date(event.endTime * 1000);
 
@@ -55,12 +35,6 @@ const Event = React.memo(({ faMapping, capitalizeAllWords, event, eventOnCurrent
 		setStartTime(startHour + ':' + startMin + (startMin === 0 ? '0' : ''));
 		setEndTime(endHour + ':' + endMin + (endMin === 0 ? '0' : ''));
 
-		setStartHour(startHour);
-		setEndHour(endHour);
-
-		setStartMin(startMin);
-		setEndMin(endMin);
-
 		setDate(date);
 		setEventName(capitalizeAllWords(event.name));
 	}, []);
@@ -70,21 +44,10 @@ const Event = React.memo(({ faMapping, capitalizeAllWords, event, eventOnCurrent
 			<div
 				onClick={() => eventClicked()}
 				className={`card ${eventType} ${!eventOnCurrentDate(date) ? 'invisible' : ''}`}
-				// onClick={() => scrollToTop()}
 			>
 				<div className={'info'}>
 					<FontAwesomeIcon icon={faMapping[eventType]} className={'eventType'} />
-					{/* <img
-						className={`eventType `}
-						src={
-							eventType ? (
-								require(`../static/images/${eventType}.png`)
-							) : (
-								require('../static/images/loading.gif')
-							)
-						}
-						alt={event.eventType}
-					/> */}
+
 					<div className={'details'}>
 						<p>{eventName}</p>
 						<p>
